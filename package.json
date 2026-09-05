@@ -1,0 +1,41 @@
+{
+  "name": "offline-pos-invoice-security",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "apps/desktop/electron/main.cjs",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build:core": "tsc -p tsconfig.backend.json",
+    "build:renderer": "vite build --config apps/desktop/vite.config.ts",
+    "build:admin": "vite build --config apps/admin/vite.config.ts",
+    "build": "npm run check && npm run build:core && npm run build:renderer && npm run build:admin",
+    "test": "ELECTRON_RUN_AS_NODE=1 electron ./node_modules/tsx/dist/cli.mjs --test test/**/*.test.ts",
+    "dev:renderer": "vite --config apps/desktop/vite.config.ts",
+    "dev:admin": "vite --config apps/admin/vite.config.ts",
+    "grant-developer": "node scripts/grant-developer.mjs",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "better-sqlite3": "^12.4.1",
+    "electron": "^38.0.0",
+    "node-machine-id": "^1.1.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.5.2",
+    "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  }
+}

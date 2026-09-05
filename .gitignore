@@ -1,0 +1,22 @@
+# Local secrets and per-machine configuration
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Dependencies and generated web bundles
+node_modules/
+dist/
+apps/desktop/renderer-dist/
+apps/admin/dist/
+
+# Supabase CLI state and logs
+supabase/.temp/
+*.log
+
+# Local POS data, exports, and operating-system files
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.bak
+.DS_Store

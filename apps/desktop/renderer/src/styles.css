@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { body { @apply m-0 font-sans antialiased; } button { @apply transition hover:opacity-90; } input, textarea, select { font: inherit; } }
